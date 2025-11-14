@@ -1,3 +1,5 @@
+package TZ4;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,9 +61,9 @@ public class MusicalShow extends Show {
             }
         }
 
-        return "Musical Show: " + getTitle() + "\n" +
+        return "Musical TZ4.Show: " + getTitle() + "\n" +
                 "Duration: " + getDuration() + " min\n" +
-                "Director: " + getDirector().getName() + " " + getDirector().getSurname() + "\n" +
+                "TZ4.Director: " + getDirector().getName() + " " + getDirector().getSurname() + "\n" +
                 "Music Author: " + (musicAuthor != null ? musicAuthor : "Unknown") + "\n" +
                 "Libretto: " + (librettoText != null ? librettoText : "No libretto") + "\n" +
                 "Actors:\n" + actorsStr;

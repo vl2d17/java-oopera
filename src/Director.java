@@ -1,10 +1,12 @@
+package TZ4;
+
 public class Director extends Person {
 
     private int numberOfShows;
 
     public Director(String name, String surname, String gender,
                     int numberOfShows) {
-        super(name, surname, gender);
+        super(name, surname, Gender.valueOf(gender));
         setNumberOfShows(numberOfShows);
     }
 

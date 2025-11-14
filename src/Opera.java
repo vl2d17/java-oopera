@@ -1,3 +1,5 @@
+package TZ4;
+
 import java.util.List;
 
 public class Opera extends MusicalShow {
@@ -24,9 +26,9 @@ public class Opera extends MusicalShow {
     }
 @Override
 public String toString() {
-    return "Opera: " + getTitle() + "\n" +
+    return "TZ4.Opera: " + getTitle() + "\n" +
             "Duration: " + getDuration() + " min\n" +
-            "Director: " + getDirector().getFullName() + "\n" +
+            "TZ4.Director: " + getDirector().getFullName() + "\n" +
             "Music Author: " + getMusicAuthor() + "\n" +
             "Libretto: " + getLibrettoText() + "\n" +
             "Choir Size: " + choirSize + " people\n" +

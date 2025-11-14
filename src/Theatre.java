@@ -1,3 +1,5 @@
+package TZ4;
+
 import java.util.Arrays;
 
 public class Theatre {
@@ -5,9 +7,9 @@ public class Theatre {
         System.out.println("### Создание актеров и режиссеров ###\n");
 
         // три актера
-        Actor actor1 = new Actor("Влад", "Трудолюб", "М", 170);
-        Actor actor2 = new Actor("Нина", "Мозякина", "Ж", 160);
-        Actor actor3 = new Actor("Михаил", "Пингвинов","М", 180);
+        Actor actor1 = new Actor("Влад", "Трудолюб", "MALE", 170);
+        Actor actor2 = new Actor("Нина", "Мозякина", "FEMALE", 160);
+        Actor actor3 = new Actor("Михаил", "Пингвинов","MALE", 180);
 
         System.out.println("Созданы актеры:");
         System.out.println("- " + actor1);
@@ -15,9 +17,9 @@ public class Theatre {
         System.out.println("- " + actor3);
 
         // два режиссера
-        Director director1 = new Director("Федор", "Бондарчук", "М",
+        Director director1 = new Director("Федор", "Бондарчук", "MALE",
                 5);
-        Director director2 = new Director("Ольга", "Кожебякина", "Ж",
+        Director director2 = new Director("Ольга", "Кожебякина", "FEMALE",
                 3);
         System.out.println("\nСозданы режиссеры:");
         System.out.println("- " + director1);
@@ -49,12 +51,12 @@ public class Theatre {
         regularShow.addActor(actor2);
 
         //опера
-        regularShow.addActor(actor3);
-        regularShow.addActor(actor2);
+        opera.addActor(actor3);
+        opera.addActor(actor2);
 
         //балет
-        regularShow.addActor(actor2);
-        regularShow.addActor(actor1);
+        ballet.addActor(actor2);
+        ballet.addActor(actor1);
 
         System.out.println("\nПопытка добавить дублирующего актера:");
         ballet.addActor(actor3);

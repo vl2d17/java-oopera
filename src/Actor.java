@@ -1,10 +1,12 @@
+package TZ4;
+
 import java.util.Objects;
 
 public class Actor extends Person {
     private int height;
 
     public Actor(String name, String surname, String gender, int height) {
-        super(name, surname, gender);
+        super(name, surname, Gender.valueOf(gender));
         this.height = height;
     }
 

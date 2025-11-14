@@ -1,3 +1,5 @@
+package TZ4;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -11,14 +13,16 @@ public class Show {
     public Show(String title, int duration, Director director, List<Actor> listOfActors) {
         this.title = Objects.requireNonNull(title, "Title cannot be null");
         setDuration(duration);
-        this.director = Objects.requireNonNull(director, "Director cannot be null");
+        this.director = Objects.requireNonNull(director, "TZ4.Director cannot be null");
         this.listOfActors = listOfActors != null ?
                 new ArrayList<>(listOfActors) : new ArrayList<>();
     }
 
     // Геттеры и сеттеры
-    public String getTitle() { return title; }
+    public String getTitle() {
+        return title; }
     public void setTitle(String title) {
+
         this.title = Objects.requireNonNull(title, "Title cannot be null");
     }
 
@@ -32,7 +36,7 @@ public class Show {
 
     public Director getDirector() { return director; }
     public void setDirector(Director director) {
-        this.director = Objects.requireNonNull(director, "Director cannot be null");
+        this.director = Objects.requireNonNull(director, "TZ4.Director cannot be null");
     }
 
     public List<Actor> getListOfActors() {
@@ -51,8 +55,7 @@ public class Show {
             System.out.println("В спектакле пока нет актеров.");
         } else {
             for (Actor actor : listOfActors) {
-                System.out.println("- " + actor.getName() + " " + actor.getSurname()
-                        + " (" + actor.getHeight() + " см)");
+                System.out.println("- " + actor.toString());
             }
         }
         System.out.println();
@@ -69,16 +72,12 @@ public class Show {
             return;
         }
 
-        // Проверяем, нет ли уже такого актёра
-        for (Actor existingActor : listOfActors) {
-            if (existingActor.getName().equalsIgnoreCase(newActor.getName()) &&
-                    existingActor.getSurname().equalsIgnoreCase(newActor.getSurname()) &&
-                    existingActor.getHeight() == newActor.getHeight()) {
-                System.out.println("Предупреждение: актёр " + newActor.getName() + " " +
-                        newActor.getSurname() + " уже участвует в спектакле!");
+
+        if (listOfActors.contains(newActor)) {
+            System.out.println("Предупреждение: актер " + newActor.getName() + " " +
+                    newActor.getSurname() + " уже участвует в спектакле!");
                 return;
             }
-        }
 
         listOfActors.add(newActor);
         System.out.println("Актёр " + newActor.getName() + " " + newActor.getSurname() +
@@ -105,9 +104,7 @@ public class Show {
             Actor currentActor = listOfActors.get(i);
             if (currentActor.getSurname().equalsIgnoreCase(surnameToReplace)) {
                 // Проверяем, не пытаемся ли заменить на того же актёра
-                if (currentActor.getName().equalsIgnoreCase(newActor.getName()) &&
-                        currentActor.getSurname().equalsIgnoreCase(newActor.getSurname()) &&
-                        currentActor.getHeight() == newActor.getHeight()) {
+                if (currentActor.equals(newActor)) {
                     System.out.println("Предупреждение: новый актёр совпадает с заменяемым!");
                     return;
                 }
@@ -131,7 +128,7 @@ public class Show {
             return;
         }
         System.out.println("Режиссер спектакля '" + title + "': " +
-                director.getName() + " " + director.getSurname());
+                director.toString());
     }
 
     @Override
@@ -143,7 +140,7 @@ public class Show {
 
         return "Play: " + title + "\n" +
                 "Duration: " + duration + " min\n" +
-                "Director: " + getDirector().getFullName() + "\n" +
+                "TZ4.Director: " + getDirector().getFullName() + "\n" +
                 "Actors:\n" + actors;
     }
 }
